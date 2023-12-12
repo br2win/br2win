@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Playfair Display Regular';
+    /* Escolha um nome para sua fonte */
+    src: url('../../../assets/fonts/playfair/PlayfairDisplay-Italic.ttf') format('truetype');
+    /* Adicione mais formatos, se necessário */
+    /* Adicione mais propriedades como font-weight, font-style, se necessário */
+}
+
+@font-face {
+    font-family: 'Playfair Display Regular';
+    /* Escolha um nome para sua fonte */
+    src: url('../../../assets/fonts/playfair/PlayfairDisplay-Regular.ttf') format('truetype');
+    /* Adicione mais formatos, se necessário */
+    /* Adicione mais propriedades como font-weight, font-style, se necessário */
+}
+
+.joel-osteen {
+    font-family: 'Playfair Display Italic', serif !important;
+}
+
+.home-title {
+    font-family: 'Playfair Display Regular', serif !important;
+    margin-bottom: 10px !important;
+}
+
+.teste {
+    color: #e7e7e7
+}

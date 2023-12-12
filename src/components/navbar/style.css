@@ -1,0 +1,15 @@
+/* styles.css */
+
+ul li {
+    padding-right: 40px !important;
+    padding: 20px;
+}
+
+/* Adicione um efeito de hover ao fundo dos links da barra de navegação */
+ul li a:hover {
+    background-color: #ff5722;
+    /* ou a cor desejada para o efeito de hover */
+    color: #fff;
+    /* cor do texto quando o mouse está sobre o link */
+    padding: 20px;
+}
