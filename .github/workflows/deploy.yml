@@ -37,13 +37,13 @@ jobs:
         run: npm ci
 
       - name: Build with Vite
-        run: npm run build  # Updated to use the script from package.json
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: build
-          path: dist
+          name: dist  # Nome do artefato, deve corresponder ao nome na etapa de download
+          path: dist  # Diretório onde os artefatos foram gerados
 
   # Deployment job
   deploy:
@@ -59,12 +59,12 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: build
-          path: dist
+          name: dist  # Nome do artefato, deve corresponder ao nome na etapa de upload
+          path: dist  # Diretório onde os artefatos serão baixados
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          cleanup: false  # Keep artifacts for deployment
+          cleanup: false  # Manter artefatos para implantação
