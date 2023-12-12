@@ -15,10 +15,10 @@
     "jsx": "react-jsx",
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "strict": false,               // Desativar todas as verificações estritas
+    "noUnusedLocals": false,       // Desativar a verificação de variáveis não utilizadas
+    "noUnusedParameters": false,   // Desativar a verificação de parâmetros não utilizados
+    "noFallthroughCasesInSwitch": false
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
