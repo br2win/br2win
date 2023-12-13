@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
+     <BrowserRouter>
       <Navbar />
-      <BrowserRouter>
         <Routes>
           <Route path='/bcoins' element={<Bcoin />}></Route>
           <Route path='/bcoin/:id' element={<UniqueBcoinPage />}></Route>
