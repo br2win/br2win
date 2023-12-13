@@ -49,3 +49,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Configure Custom Domain
+        run: echo "br2win.com.br" > ./dist/CNAME
+        working-directory: ./dist
