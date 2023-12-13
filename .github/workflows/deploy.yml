@@ -20,10 +20,16 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install
 
       - name: Build project
         run: npm run build
+
+      - name: Create dist directory
+        run: mkdir ./dist
+
+      - name: Copy artifacts to dist
+        run: cp -r ./path/to/your/artifacts/* ./dist/
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
@@ -52,4 +58,3 @@ jobs:
 
       - name: Configure Custom Domain
         run: echo "br2win.com.br" > ./dist/CNAME
-        working-directory: ./dist
