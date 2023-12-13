@@ -1,4 +1,4 @@
-import {BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
+import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
 import UniqueBcoinPage from './components/pages/UniqueBcoinPage/UniqueBcoinPage'
 import Footer from './components/footer/Footer'
@@ -12,14 +12,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path='/bcoins' element={<Bcoin />}></Route>
           <Route path='/bcoin/:id' element={<UniqueBcoinPage />}></Route>
           <Route path='/ajuda' element={<Help />}></Route>
         </Routes>
-      </HashRouter>  
       <Footer />
+      </BrowserRouter>  
     </>
   )
 }
