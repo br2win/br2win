@@ -17,13 +17,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 20
+          node-version: 16
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
       - name: Build project
         run: npm run build
+
+      - name: Copy index.html to 404.html
+        run: cp ./dist/index.html ./dist/404.html
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
