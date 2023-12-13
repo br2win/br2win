@@ -12,23 +12,21 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2  # Atualize para a versão mais recente se disponível
+        uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v3  # Atualize para a versão mais recente se disponível
+        uses: actions/setup-node@v3
         with:
           node-version: 16
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1  # Atualize para a versão mais recente se disponível
+        run: npm install
 
       - name: Build project
-        run: |
-          npm run build
-          cp 404.html ./dist
+        run: npm run build
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2  # Atualize para a versão mais recente se disponível
+        uses: actions/upload-artifact@v2
         with:
           name: production-files
           path: ./dist
@@ -40,7 +38,7 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2  # Atualize para a versão mais recente se disponível
+        uses: actions/download-artifact@v2
         with:
           name: production-files
           path: ./dist
@@ -49,7 +47,7 @@ jobs:
         run: echo "br2win.com.br" > ./dist/CNAME
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3  # Atualize para a versão mais recente se disponível
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
