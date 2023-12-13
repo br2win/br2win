@@ -10,6 +10,7 @@ export default defineConfig({
       '/': {
         target: 'https://br2win.com.br/index.html',
         changeOrigin: true,
+         // @ts-ignore
         rewrite: (path) => (path === '/' || path.endsWith('.html')) ? path : '/index.html',
       },
     },
