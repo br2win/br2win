@@ -5,4 +5,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   base: 'https://br2win.com.br',
+  server: {
+    fs: {
+      // Para servir index.html em rotas desconhecidas
+      strict: false,
+    },
+  },
 });
