@@ -1,18 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "ES2020",
     "useDefineForClassFields": true,
-    "allowSyntheticDefaultImports": true,
-    "lib": ["es2020", "dom", "dom.iterable", "esnext"],
-    "module": "esnext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "moduleResolution": "node",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noEmit": true,
     "jsx": "react-jsx",
-    "strict": false, // Desativar todas as verificações estritas
-    "noUnusedLocals": false, // Desativar a verificação de variáveis não utilizadas
-    "noUnusedParameters": false, // Desativar a verificação de parâmetros não utilizados
+
+    /* Linting */
+    "strict": false,               // Desativar todas as verificações estritas
+    "noUnusedLocals": false,       // Desativar a verificação de variáveis não utilizadas
+    "noUnusedParameters": false,   // Desativar a verificação de parâmetros não utilizados
     "noFallthroughCasesInSwitch": false
   },
   "include": ["src"],

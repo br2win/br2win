@@ -6,13 +6,9 @@ export default defineConfig({
   plugins: [react()],
   base: 'https://br2win.com.br',
   server: {
-    proxy: {
-      '/': {
-        target: 'https://br2win.com.br/index.html',
-        changeOrigin: true,
-         // @ts-ignore
-        rewrite: (path) => (path === '/' || path.endsWith('.html')) ? path : '/index.html',
-      },
+    fs: {
+      // Para servir index.html em rotas desconhecidas
+      strict: false,
     },
   },
 });
