@@ -10,5 +10,13 @@ export default defineConfig({
       // Para servir index.html em rotas desconhecidas
       strict: false,
     },
+    // Adicionar reescritas para servir 404.html em rotas desconhecidas
+    proxy: {
+      '/': {
+        target: 'https://br2win.com.br/404.html', // Caminho para 404.html
+        changeOrigin: true,
+        rewrite: (path) => path !== '/404.html' ? '/404.html' : path,
+      },
+    },
   },
 });
