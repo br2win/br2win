@@ -11,6 +11,12 @@
     <p>Desculpe, a página que você está procurando não foi encontrada.</p>
 
     <script>
+        // Adicione um event listener para o evento popstate
+        window.addEventListener('popstate', function(event) {
+            // Redirecione para a página anterior no histórico
+            window.location.href = document.referrer || '/';
+        });
+
         // Adicione uma entrada ao histórico para redefinir a rota para '/'
         history.pushState(null, '', '/');
 
