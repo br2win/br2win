@@ -57,9 +57,14 @@
     </div>
 
     <script>
-        const url = new URL(window.location.href);
-        const path = url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : url.pathname;
-        window.location.replace(url.origin + + path);
-      </script>
+        // Adicione um event listener para o evento popstate
+        window.addEventListener('popstate', function(event) {
+            // Redirecione para a página anterior no histórico
+            window.location.href = document.referrer || '/';
+        });
+
+        // Adicione uma entrada ao histórico para redefinir a rota para '/'
+        history.pushState(null, '', '/');
+    </script>
 </body>
 </html>
