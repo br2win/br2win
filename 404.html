@@ -57,14 +57,10 @@
     </div>
 
     <script>
-        // Adicione um event listener para o evento popstate
-        window.addEventListener('popstate', function(event) {
-            // Redirecione para a página anterior no histórico
-            window.location.href = document.referrer || '/';
-        });
-
-        // Adicione uma entrada ao histórico para redefinir a rota para '/'
-        history.pushState(null, '', '/');
+        // Redirecionar para a página inicial após alguns segundos
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 3000);
     </script>
 </body>
 </html>
