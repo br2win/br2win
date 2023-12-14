@@ -13,6 +13,8 @@ import * as React from 'react';
 import Logo from '../../assets/logo/br2win-logo.png';
 import Marquee from '../marquee/Marquee';
 import { Link } from '@mui/material';
+import { Link as RouterLink} from 'react-router-dom';
+import './style.css'
 
 const pages = ['bcoins', 'Sorteios', 'Ajuda', 'Como funciona?', 'Contato'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -27,7 +29,7 @@ function Navbar() {
 
   const handleCloseNavMenu = (page: string) => {
     setAnchorElNav(null);
-    window.location.href = `/${page.toLowerCase()}`; // Redireciona para a página correspondente
+    // window.location.href = `/${page.toLowerCase()}`; // Redireciona para a página correspondente
   };
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -58,11 +60,11 @@ function Navbar() {
                 textDecoration: 'none',
               }}
             >
-              <Link
-                href={'/home'}
+              <RouterLink
+                to={'/home'}
               >
                 <img src={Logo} width={150} alt="BR2win Logo" />
-              </Link>
+              </RouterLink>
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -136,7 +138,12 @@ function Navbar() {
                     }
                   }}
                 >
-                  {page}
+                  <RouterLink 
+                    to={`/${page.toLowerCase()}`}
+                    className='navbar-link'
+                  >
+                    {page}
+                  </RouterLink>
                 </Button>
               ))}
             </Box>
