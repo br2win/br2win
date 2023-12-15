@@ -8,9 +8,15 @@ import { Help } from './components/help/Help';
 
 function NotFound() {
   return (
-    <div>
-      <h1>404 Not Found</h1>
-      <p>Oops! Página não encontrada. Volte para <a href="/">página inicial</a> ou tente outra rota.</p>
+    <div style={{ textAlign: 'center', padding: '50px' }}>
+      <h1 style={{ fontSize: '4em', color: '#e74c3c', marginBottom: '10px' }}>😞</h1>
+      <h1>Oops! Página não encontrada</h1>
+      <p style={{ fontSize: '1.5em', color: '#555', marginTop: '20px' }}>
+        Parece que você se perdeu. A página que você está procurando não foi encontrada.
+      </p>
+      <p>
+        Volte para <a href="/">página inicial</a> ou tente outra rota.
+      </p>
     </div>
   );
 }
